@@ -4,23 +4,22 @@ import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { useRecoilState } from "recoil";
 import { toDoState } from "./atoms";
 import Board from "./Components/Board";
+import Header from "./Components/Header";
+import AddBoardModal from "./Components/AddBoardModal";
+import EditBoardModal from "./Components/EditBoardModal";
 
-const Wrapper = styled.div`
-  display: flex;
-  max-width: 680px;
-  width: 100vw;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+const Contents = styled.div`
+  width: 100%;
+  height: calc(100% - 4rem);
 `;
 
 const Boards = styled.div`
+  padding: 10px;
   width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   gap: 10px;
+  overflow-y: auto;
 `;
 
 function App() {
@@ -55,15 +54,20 @@ function App() {
     }
   };
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <Wrapper>
-        <Boards>
-          {Object.keys(toDos).map((boardId) => (
-            <Board key={boardId} boardId={boardId} toDos={toDos[boardId]} />
-          ))}
-        </Boards>
-      </Wrapper>
-    </DragDropContext>
+    <>
+      <Header />
+      <Contents>
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Boards>
+            {Object.keys(toDos).map((boardId) => (
+              <Board key={boardId} boardId={boardId} toDos={toDos[boardId]} />
+            ))}
+          </Boards>
+        </DragDropContext>
+      </Contents>
+      <AddBoardModal />
+      <EditBoardModal />
+    </>
   );
 }
 

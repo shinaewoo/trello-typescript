@@ -23,11 +23,12 @@ npm start
 
 ### Functions
 
+- [x] Add Board
+- [x] Edit Board Name
 - [x] Add Todo
-- [ ] Delete Todo
-- [ ] Store Data in LocalStorage
+- [x] Delete Todo
 - [x] Drag Todo
-- [ ] Add Board
+- [x] Store Data in LocalStorage
 
 ### Description
 

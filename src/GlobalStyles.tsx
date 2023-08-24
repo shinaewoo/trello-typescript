@@ -30,11 +30,19 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	width: 100vw;
+	min-width: 768px;
+	height: 100vh;
 	font-weight: 300;
-    font-family: 'Open Sans', sans-serif;
     background-color: ${(props) => props.theme.bgColor};
     color:black;
-    line-height: 1.2;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+#root {
+  width: 100%;
+  height: 100%;
 }
 ol, ul {
 	list-style: none;
@@ -55,4 +63,9 @@ a {
     text-decoration: none;
     color: inherit;
 }
+button {
+	outline: none;
+  	border: none;
+}
+
 `;
