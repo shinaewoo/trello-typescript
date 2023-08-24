@@ -24,6 +24,7 @@ npm start
 ### Functions
 
 - [x] Add Board
+- [x] Delete Board
 - [x] Edit Board Name
 - [x] Add Todo
 - [x] Delete Todo
